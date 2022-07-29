@@ -1,6 +1,9 @@
 # cmake stuff
 .cache/
 .cmake/
+CTestTestfile.cmake
+DartConfiguration.tcl
+Testing/
 CMakeCache.txt
 CMakeFiles/
 _deps/

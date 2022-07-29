@@ -1,9 +1,5 @@
-#include <iostream>
 #include <fmt/format.h>
-
-int add_2(int a) {
-    return a + 2;
-}
+#include <iostream>
 
 int main() {
     fmt::print("Hello, World!\n");
