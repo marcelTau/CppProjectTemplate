@@ -1,3 +1,15 @@
+# cmake stuff
+.cache/
+.cmake/
+CMakeCache.txt
+CMakeFiles/
+_deps/
+build/
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+
 # Prerequisites
 *.d
 
