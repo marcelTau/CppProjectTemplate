@@ -2,6 +2,9 @@
 build_dir	= build
 exe_name 	= TODO_ChangeExecutableName
 
+# name of the test target in the build makefile
+test_name 	= Tests
+
 help:
 	@echo "USAGE:"
 	@echo -e "    - build -- to build the code"
@@ -14,13 +17,25 @@ compile_commands:
 
 build:
 	@cmake -B $(build_dir) -S .
+	@make $(exe_name) -C $(build_dir)
 
-test: build
-	@clear
-	@make test -C $(build_dir)
+test:
+	@cmake -B $(build_dir) -S .
+	@make $(test_name) -C $(build_dir)
+	./build/test/$(test_name)
+
+#ctest:
+	#@cmake -B $(build_dir) --config Debug
+	#ctest --test-dir build -C Debug
+
+coverage: build
+	@gcovr --xml-pretty -f src -f include > coverage.xml
+
 
 run: build
-	@clear
 	./$(build_dir)/$(exe_name)
 
-.PHONY: build compile_commands test run help
+clean:
+	make clean -C build
+
+.PHONY: build compile_commands test run help clean
