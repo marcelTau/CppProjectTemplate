@@ -43,7 +43,9 @@ jobs:
       - name: Generate Coverage Report
         working-directory: ${{github.workspace}}
         run: |
-          make build
+          make clean && make build
+          ls
+          find . -name '*.gcno'
           gcovr --xml-pretty -f src > coverage.xml && cat coverage.xml
 
       - uses: codecov/codecov-action@v3
