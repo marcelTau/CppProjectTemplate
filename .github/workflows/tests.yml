@@ -44,6 +44,7 @@ jobs:
         run: |
           make && make test
           pwd
+          ls ../src
           gcovr --xml-pretty -r .. -f ../src > coverage.xml
           gcovr --xml-pretty -r .. -f ../src > ../coverage.xml
           cat coverage.xml
