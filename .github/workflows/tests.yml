@@ -42,7 +42,7 @@ jobs:
       - name: Generate Coverage Report
         working-directory: ${{github.workspace}}/build
         run: |
-          make && make test && make ctest
+          make && make test
           pwd
           gcovr -v -r .. -f ../src > coverage.xml
           gcovr -v -r .. -f ../src > ../coverage.xml
