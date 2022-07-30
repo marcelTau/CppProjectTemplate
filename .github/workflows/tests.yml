@@ -46,6 +46,9 @@ jobs:
           pwd
           gcovr -v -r .. -f ../src > coverage.xml
           gcovr -v -r .. -f ../src > ../coverage.xml
+          cat coverage.xml
+          echo "+++++++++++++++++++++++++++++++++++++++"
+          cat ../coverage.xml
 
       - uses: codecov/codecov-action@v3
         with:
