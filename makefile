@@ -22,7 +22,7 @@ build:
 test:
 	@cmake -B $(build_dir) -S .
 	@make $(test_name) -C $(build_dir)
-	./build/test/$(test_name)
+	./build/test/$(test_name) --gtest_color=yes
 
 ctest:
 	cmake --build $(build_dir) --config Debug

@@ -43,7 +43,7 @@ jobs:
         run: |
           make && make test
           pwd
-          gcovr -r .. -f ../src
+          gcovr -v -r .. -f ../src
           #echo "++++++++++++++++++++++++++++++++++++++++++"
           #gcovr --xml-pretty -f src > coverage.xml && cat coverage.xml
 
