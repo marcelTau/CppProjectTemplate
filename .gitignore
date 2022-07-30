@@ -1,5 +1,6 @@
 # cmake stuff
 .cache/
+coverage.info
 .cmake/
 CTestTestfile.cmake
 DartConfiguration.tcl

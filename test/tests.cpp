@@ -9,4 +9,7 @@ TEST(TODO_WriteTests, TODO_WriteTestsDescription) {
 TEST(ActuallyDoSomething, xxx) {
     EXPECT_TRUE(branches(5) == 5);
     EXPECT_TRUE(branches(8) == 0);
+    EXPECT_TRUE(branches(2) == 2);
+    EXPECT_TRUE(branches(3) == 3);
+    EXPECT_TRUE(branches(4) == 4);
 }

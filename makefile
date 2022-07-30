@@ -28,8 +28,9 @@ ctest:
 	cmake --build $(build_dir) --config Debug
 	ctest --test-dir build -C Debug
 
-coverage: build
+coverage: build test
 	@gcovr -f src -f include
+	@lcov --capture --directory . --output-file coverage.info
 	@gcovr --xml-pretty -f src -f include > coverage.xml
 
 
