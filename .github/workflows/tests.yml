@@ -40,17 +40,12 @@ jobs:
         run: ctest -C ${{env.BUILD_TYPE}} 
 
       - name: Generate Coverage Report
-        working-directory: ${{github.workspace}}/build
+        working-directory: ${{github.workspace}}
         run: |
-          make && make test
-          pwd
-          ls ../src
-          gcovr --xml-pretty -r .. -f ../src > coverage.xml
-          gcovr --xml-pretty -r .. -f ../src > ../coverage.xml
+          gcovr --xml-pretty -f src > coverage.xml
           cat coverage.xml
-          echo "+++++++++++++++++++++++++++++++++++++++"
-          cat ../coverage.xml
 
       - uses: codecov/codecov-action@v3
         with:
           files: ./coverage.xml # optional
+          verbose: true
