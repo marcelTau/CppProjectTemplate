@@ -5,12 +5,6 @@ project(TODO_ChangeProjectName)
 include(FetchContent)
 include(CTest)
 
-set(EXE_NAME TODO_ChangeExecutableName)
-
-set(SOURCES src/source.cpp)
-set(HEADERS include/header.h)
-set(MAIN src/main.cpp)
-set(CMAKE_CXX_STANDARD 23)
 
 if (CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
@@ -18,6 +12,12 @@ if (CMAKE_COMPILER_IS_GNUCXX)
     APPEND_COVERAGE_COMPILER_FLAGS()
     setup_target_for_coverage_gcovr_html(NAME ${PROJECT_NAME}_coverage ${PROJECT_TEST_NAME} coverage)
 endif()
+
+set(EXE_NAME TODO_ChangeExecutableName)
+set(SOURCES src/source.cpp)
+set(HEADERS include/header.h)
+set(MAIN src/main.cpp)
+set(CMAKE_CXX_STANDARD 23)
 
 
 # This is a way to use cmake to download packages for you.

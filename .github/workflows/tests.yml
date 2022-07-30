@@ -47,6 +47,14 @@ jobs:
           #echo "++++++++++++++++++++++++++++++++++++++++++"
           #gcovr --xml-pretty -f src > coverage.xml && cat coverage.xml
 
+      - name: testing ...
+        working-directory: ${{github.workspace}}
+        run: |
+          pwd
+          make build
+          make ctest
+          make coverage
+
       - uses: codecov/codecov-action@v3
         with:
           files: ./coverage.xml # optional

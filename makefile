@@ -24,11 +24,12 @@ test:
 	@make $(test_name) -C $(build_dir)
 	./build/test/$(test_name)
 
-#ctest:
-	#@cmake -B $(build_dir) --config Debug
-	#ctest --test-dir build -C Debug
+ctest:
+	cmake --build $(build_dir) --config Debug
+	ctest --test-dir build -C Debug
 
 coverage: build
+	@gcovr -f src -f include
 	@gcovr --xml-pretty -f src -f include > coverage.xml
 
 
