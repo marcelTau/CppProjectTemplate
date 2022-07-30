@@ -30,7 +30,7 @@ ctest:
 
 coverage: build test
 	@gcovr -f src -f include
-	@lcov --capture --directory . --output-file coverage.info
+	# @lcov --capture --directory . --output-file coverage.info
 	@gcovr --xml-pretty -f src -f include > coverage.xml
 
 

@@ -15,10 +15,6 @@ int branches(int a) {
         return 3;
     }
 
-    if (a == 3) {
-        return 3;
-    }
-
     if (a == 4) {
         return 4;
     }
