@@ -45,6 +45,7 @@ jobs:
           make && make test && make ctest
           pwd
           gcovr -v -r .. -f ../src > coverage.xml
+          gcovr -v -r .. -f ../src > ../coverage.xml
 
       - uses: codecov/codecov-action@v3
         with:
