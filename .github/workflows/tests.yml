@@ -42,11 +42,11 @@ jobs:
         # run: make test
 
       - name: Generate Coverage Report
-        working-directory: ${{github.workspace}}
+        working-directory: ${{github.workspace}}/build
         run: |
-          make clean && make build
-          ls
-          find . -name '*.gcno'
+          make && make test
+          gcovr -r .. -f ../src
+          echo "------------------------------------------"
           gcovr --xml-pretty -f src > coverage.xml && cat coverage.xml
 
       - uses: codecov/codecov-action@v3
